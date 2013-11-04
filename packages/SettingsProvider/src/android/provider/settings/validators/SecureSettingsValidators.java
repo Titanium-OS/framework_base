@@ -257,5 +257,6 @@ public class SecureSettingsValidators {
         VALIDATORS.put(Secure.ASSIST_HANDLES_LEARNING_EVENT_COUNT, NON_NEGATIVE_INTEGER_VALIDATOR);
 
         // TitaniumOS Additions
+        VALIDATORS.put(Secure.VOLUME_LINK_NOTIFICATION, BOOLEAN_VALIDATOR);
     }
 }

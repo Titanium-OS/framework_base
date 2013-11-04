@@ -169,7 +169,8 @@ public class SecureSettings {
         Settings.Secure.ACCESSIBILITY_BUTTON_TARGETS,
         Settings.Secure.ADAPTIVE_CONNECTIVITY_ENABLED,
         Settings.Secure.ASSIST_HANDLES_LEARNING_TIME_ELAPSED_MILLIS,
-        Settings.Secure.ASSIST_HANDLES_LEARNING_EVENT_COUNT
+        Settings.Secure.ASSIST_HANDLES_LEARNING_EVENT_COUNT,
         //TitaniumOS Additions
+        Settings.Secure.VOLUME_LINK_NOTIFICATION
     };
 }
