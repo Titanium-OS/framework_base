@@ -5061,6 +5061,12 @@ public final class Settings {
         public static final String AMBIENT_WAKE_GESTURES = "ambient_wake_gestures";
 
         /**
+         * Lockscreen media art
+         * @hide
+         */
+        public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
+
+        /**
          * Enable\Disable Bluetooth Battery bar
          * @hide
          */
@@ -5209,6 +5215,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(VOLUME_ROCKER_WAKE);
             PRIVATE_SETTINGS.add(VOLUME_BUTTON_MUSIC_CONTROL);
             PRIVATE_SETTINGS.add(VOLUME_KEY_CURSOR_CONTROL);
+            PRIVATE_SETTINGS.add(LOCKSCREEN_MEDIA_METADATA);
         }
 
         /**
