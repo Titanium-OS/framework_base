@@ -233,4 +233,9 @@ oneway interface IStatusBar
      */
     void showInDisplayFingerprintView();
     void hideInDisplayFingerprintView();
+
+    /**
+     * Titanium extensions
+     */
+    void toggleCameraFlash();
 }
