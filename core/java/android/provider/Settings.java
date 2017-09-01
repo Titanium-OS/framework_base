@@ -5325,7 +5325,16 @@ public final class Settings {
                 "status_bar_locked_on_secure_keyguard";
 
         /**
-         * Whether to show charging animation
+         * Change volume up and down handlign based on rotation
+         * @hide
+         */
+        public static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+
+        /**
+         * IMPORTANT: If you add a new public settings you also have to add it to
+         * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
+         * it to PRIVATE_SETTINGS below. Also add a validator that can validate
+         * the setting value. See an example above.
          * @hide
          */
         public static final String CHARGING_ANIMATION = "charging_animation";
