@@ -4945,6 +4945,12 @@ public final class Settings {
        public static final String BATTERY_LIGHT_REALLYFULL_COLOR = "battery_light_reallyfull_color";
 
         /**
+         * Check the proximity sensor during wakeup
+         * @hide
+         */
+       public static final String PROXIMITY_ON_WAKE = "proximity_on_wake";
+
+        /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
@@ -5073,6 +5079,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(SHOW_VOLTE_ICON);
             PRIVATE_SETTINGS.add(VOLTE_ICON_STYLE);
             PRIVATE_SETTINGS.add(BACK_GESTURE_HAPTIC);
+            PRIVATE_SETTINGS.add(PROXIMITY_ON_WAKE);
         }
 
         /**
