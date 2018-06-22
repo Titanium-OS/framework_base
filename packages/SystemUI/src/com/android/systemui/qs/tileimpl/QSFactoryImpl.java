@@ -45,6 +45,7 @@ import com.android.systemui.qs.tiles.GamingModeTile;
 import com.android.systemui.qs.tiles.HeadsUpTile;
 import com.android.systemui.qs.tiles.HotspotTile;
 import com.android.systemui.qs.tiles.HWKeysTile;
+import com.android.systemui.qs.tiles.ImmersiveTile;
 import com.android.systemui.qs.tiles.IntentTile;
 import com.android.systemui.qs.tiles.LiveDisplayTile;
 import com.android.systemui.qs.tiles.LocationTile;
@@ -122,6 +123,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<ScreenStabilizationTile> mScreenStabilizationTileProvider;
     private final Provider<MonoToggleTile> mMonoToggleTileProvider;
     private final Provider<DataSwitchTile> mDataSwitchTileProvider;
+    private final Provider<ImmersiveTile> mImmersiveTileProvider;
 
     private QSTileHost mHost;
 
@@ -167,7 +169,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<FPSInfoTile> fpsInfoTileProvider,
             Provider<ScreenStabilizationTile> screenStabilizationTileProvider,
             Provider<MonoToggleTile> monoToggleTileProvider,
-            Provider<DataSwitchTile> dataSwitchTileProvider) {
+            Provider<DataSwitchTile> dataSwitchTileProvider,
+            Provider<ImmersiveTile> immersiveTileProvider) {
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
         mCellularTileProvider = cellularTileProvider;
@@ -211,6 +214,7 @@ public class QSFactoryImpl implements QSFactory {
         mScreenStabilizationTileProvider = screenStabilizationTileProvider;
         mMonoToggleTileProvider = monoToggleTileProvider;
         mDataSwitchTileProvider = dataSwitchTileProvider;
+        mImmersiveTileProvider = immersiveTileProvider;
     }
 
     public void setHost(QSTileHost host) {
@@ -311,6 +315,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mMonoToggleTileProvider.get();
             case "dataswitch":
                 return mDataSwitchTileProvider.get();
+            case "immersive":
+                return mImmersiveTileProvider.get();
         }
 
         // Intent tiles.
