@@ -159,4 +159,5 @@ interface IStatusBarService
      * Titanium extensions
      */
     void toggleCameraFlash();
+    void toggleCameraFlashState(boolean enable);
 }
