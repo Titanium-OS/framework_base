@@ -5166,7 +5166,13 @@ public final class Settings {
         public static final String LOCKSCREEN_ALBUMART_FILTER = "lockscreen_albumart_filter";
 
         /**
-         * Enable\Disable Bluetooth Battery bar
+         * Whether to show charging animation on lock screen
+         * @hide
+         */
+        public static final String LOCKSCREEN_CHARGING_ANIMATION = "lockscreen_charging_animation";
+
+        /**
+         * Enable\Disable Bluetooth Battery bar 
          * @hide
          */
         public static final String BLUETOOTH_SHOW_BATTERY = "bluetooth_show_battery";
