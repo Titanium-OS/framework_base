@@ -36,4 +36,9 @@
     <string name="global_action_restart_bootloader">Bootloader</string>
     <string name="global_action_restart_ui">System UI</string>
 
+    <!-- Tuner items -->
+    <string name="status_bar_data_saver">Datensparmodus</string>
+    <string name="status_bar_vpn">VPN</string>
+    <string name="status_bar_roaming">Roaming</string>
+
 </resources>
