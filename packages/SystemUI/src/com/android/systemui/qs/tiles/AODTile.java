@@ -18,6 +18,9 @@
 package com.android.systemui.qs.tiles;
 
 import android.content.Intent;
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 
@@ -33,7 +36,7 @@ import javax.inject.Inject;
 
 public class AODTile extends QSTileImpl<BooleanState> implements
         BatteryController.BatteryStateChangeCallback {
-
+    private boolean mListening;
     private final Icon mIcon = ResourceIcon.get(R.drawable.ic_qs_aod);
     private final BatteryController mBatteryController;
 
@@ -120,7 +123,26 @@ public class AODTile extends QSTileImpl<BooleanState> implements
         return MetricsEvent.TIELEMENTS;
     }
 
+    private ContentObserver mObserver = new ContentObserver(mHandler) {
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            refreshState();
+        }
+    };
+
     @Override
     public void handleSetListening(boolean listening) {
+        if (mObserver == null) {
+            return;
+        }
+        if (mListening != listening) {
+            mListening = listening;
+            if (listening) {
+                mContext.getContentResolver().registerContentObserver(
+                        Settings.Secure.getUriFor(Settings.Secure.DOZE_ALWAYS_ON), false, mObserver);
+            } else {
+                mContext.getContentResolver().unregisterContentObserver(mObserver);
+            }
+        }
     }
 }
