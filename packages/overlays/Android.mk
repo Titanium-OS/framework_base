@@ -81,6 +81,16 @@ LOCAL_REQUIRED_MODULES := \
 	AccentColorAppleTealOverlay \
 	AccentColorAppleYellowOverlay \
 	FontNotoSerifSourceOverlay \
+        FontAclonicaSourceOverlay \
+        FontAmaranteSourceOverlay \
+        FontBariolSourceOverlay \
+        FontCagliostroSourceOverlay \
+        FontCoolstorySourceOverlay \
+        FontLGSmartGothicSourceOverlay \
+        FontNotoSerifSourceOverlay \
+        FontRosemarySourceOverlay \
+        FontSonySketchSourceOverlay \
+        FontSurferSourceOverlay \
 	IconPackCircularAndroidOverlay \
 	IconPackCircularLauncherOverlay \
 	IconPackCircularSettingsOverlay \
