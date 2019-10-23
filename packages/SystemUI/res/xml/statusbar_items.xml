@@ -95,4 +95,7 @@
         android:key="wifi"
         android:title="@string/quick_settings_wifi_label" />
 
+    <com.android.systemui.tuner.StatusBarSwitch
+        android:key="zen"
+        android:title="@string/quick_settings_dnd_label" />
 </PreferenceScreen>
