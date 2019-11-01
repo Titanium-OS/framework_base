@@ -255,5 +255,7 @@ public class SecureSettingsValidators {
         VALIDATORS.put(
                 Secure.ASSIST_HANDLES_LEARNING_TIME_ELAPSED_MILLIS, NONE_NEGATIVE_LONG_VALIDATOR);
         VALIDATORS.put(Secure.ASSIST_HANDLES_LEARNING_EVENT_COUNT, NON_NEGATIVE_INTEGER_VALIDATOR);
+
+        // TitaniumOS Additions
     }
 }
