@@ -91,12 +91,13 @@ LOCAL_REQUIRED_MODULES := \
         FontRosemarySourceOverlay \
         FontSonySketchSourceOverlay \
         FontSurferSourceOverlay \
-	FontGoogleSansOverlay \
 	FontAntipastoProSourceOverlay \
 	FontEvolveSansSourceOverlay \
 	FontFucekSourceOverlay \
 	FontGoogleSansMediumSourceOverlay \
 	FontLemonMilkSourceOverlay \
+	FontComicSansSourceOverlay \
+	FontGoogleSansSourceOverlay \
 	FontOdudaSourceOverlay \
 	FontReemKufiSourceOverlay \
 	FontSimpleDaySourceOverlay \
