@@ -14,18 +14,6 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="26dp"
-    android:height="26dp"
-    android:viewportWidth="96"
-    android:viewportHeight="96">
-
-    <path
-        android:fillColor="@color/light_mode_icon_color_single_tone"
-        android:pathData="M 48 20 C 63.4639729953 20 76 32.5360270047 76 48 C 76 63.4639729953 63.4639729953 76 48 76 C 32.5360270047 76 20 63.4639729953 20 48 C 20 32.5360270047 32.5360270047 20 48 20 Z" />
-    <path
-        android:fillColor="@color/light_mode_icon_color_single_tone"
-        android:pathData="M48,10c-21,0-38,17-38,38s17,38,38,38s38-17,38-38S69,10,48,10z
-M48,82c-18.8,0-34-15.2-34-34
-c0-18.8,15.2-34,34-34s34,15.2,34,34C82,66.8,66.8,82,48,82z" />
+<vector xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:height="22dp" android:width="22dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#00000000" android:pathData="M12,12m-7.448,0a7.448,7.448 0,1 1,14.897 0a7.448,7.448 0,1 1,-14.897 0" android:strokeColor="?attr/singleToneColor" android:strokeWidth="2.4828"/>
 </vector>
