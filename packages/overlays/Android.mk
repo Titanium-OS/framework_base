@@ -96,6 +96,7 @@ LOCAL_REQUIRED_MODULES := \
 	FontFucekSourceOverlay \
 	FontGoogleSansMediumSourceOverlay \
 	FontLemonMilkSourceOverlay \
+	FontComfortaaSourceOverlay \
 	FontComicSansSourceOverlay \
 	FontGoogleSansSourceOverlay \
 	FontOdudaSourceOverlay \
