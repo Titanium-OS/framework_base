@@ -87,5 +87,6 @@ public class SystemSettings {
         Settings.System.QS_FOOTER_TEXT_SHOW,
         Settings.System.QS_FOOTER_TEXT_STRING,
         Settings.System.SMART_SPACE,
+        Settings.System.RINGTONE_VIBRATION_PATTERN,
     };
 }
