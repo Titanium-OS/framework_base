@@ -7438,5 +7438,8 @@ message MetricsEvent {
 
     // Titanium Metrics
     TIELEMENTS = 2000;
+
+    // Panel for Mobile Data
+    PANEL_MOBILE_DATA = 2001;
   }
 }
