@@ -2692,4 +2692,7 @@ enum PageId {
     // Custom Additions
     // Panel for Bluetooth
     PANEL_BLUETOOTH = 2001;
+
+    // Panel for Mobile Data
+    PANEL_MOBILE_DATA = 2000;
 }
