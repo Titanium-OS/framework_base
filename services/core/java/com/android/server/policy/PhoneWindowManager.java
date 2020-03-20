@@ -852,7 +852,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     break;
                 }
                 case MSG_TOGGLE_TORCH:
-                    toggleTorch();
+                    TitaniumUtils.toggleCameraFlash();
                     break;
             }
         }
@@ -1376,6 +1376,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private void powerMultiPressAction(long eventTime, boolean interactive, int behavior) {
         switch (behavior) {
             case MULTI_PRESS_POWER_NOTHING:
+                if ((!isScreenOn() || isDozeMode())) {
+                    TitaniumUtils.toggleCameraFlash();
+                }
                 break;
             case MULTI_PRESS_POWER_THEATER_MODE:
                 if (!isUserSetupComplete()) {
