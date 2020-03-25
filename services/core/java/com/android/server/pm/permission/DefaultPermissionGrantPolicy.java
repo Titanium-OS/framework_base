@@ -836,6 +836,9 @@ public final class DefaultPermissionGrantPolicy {
         // Google Recorder
         grantSystemFixedPermissionsToSystemPackage("com.google.android.apps.recorder", userId, MICROPHONE_PERMISSIONS,
                 ALWAYS_LOCATION_PERMISSIONS);
+
+        // Lawnchair
+        grantSystemFixedPermissionsToSystemPackage("ch.deletescape.lawnchair.ci", userId, STORAGE_PERMISSIONS);
     }
 
     private String getDefaultSystemHandlerActivityPackageForCategory(String category, int userId) {
