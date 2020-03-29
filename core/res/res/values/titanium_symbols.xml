@@ -300,4 +300,6 @@
     <java-symbol type="color" name="gradient_start" />
     <java-symbol type="color" name="gradient_end" />
 
+    <!-- Component name of popup camera service -->
+    <java-symbol type="string" name="config_popUpCameraServiceComponentName" />
 </resources>
