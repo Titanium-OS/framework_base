@@ -193,6 +193,11 @@ public final class DefaultPermissionGrantPolicy {
         STORAGE_PERMISSIONS.add(Manifest.permission.ACCESS_MEDIA_LOCATION);
     }
 
+    private static final Set<String> SUSPEND_APP_PERMISSIONS = new ArraySet<>();
+    static {
+        SUSPEND_APP_PERMISSIONS.add(Manifest.permission.SUSPEND_APPS);
+    }
+
     private static final int MSG_READ_DEFAULT_PERMISSION_EXCEPTIONS = 1;
 
     private static final String ACTION_TRACK = "com.android.fitness.TRACK";
@@ -614,6 +619,12 @@ public final class DefaultPermissionGrantPolicy {
             grantPermissionsToPackage(chromePackage, userId, false /* ignoreSystemPackage */,
                     true /*whitelistRestrictedPermissions*/, CONTACTS_PERMISSIONS, STORAGE_PERMISSIONS);
         }
+
+        // Wellbeing
+        String WellbeingPackageName = "com.google.android.apps.wellbeing";
+        grantSystemFixedPermissionsToSystemPackage(
+                getDefaultProviderAuthorityPackage(WellbeingPackageName, userId),
+                userId, SUSPEND_APP_PERMISSIONS);
 
         // Voice interaction
         if (voiceInteractPackageNames != null) {
@@ -1412,7 +1423,6 @@ public final class DefaultPermissionGrantPolicy {
             return mContext.getPackageManager().getPackageInfo(pkg,
                     DEFAULT_PACKAGE_INFO_QUERY_FLAGS | extraFlags);
         } catch (NameNotFoundException e) {
-            Slog.e(TAG, "PackageNot found: " + pkg, e);
             return null;
         }
     }
