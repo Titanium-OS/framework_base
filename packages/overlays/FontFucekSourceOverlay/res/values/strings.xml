@@ -1,6 +1,6 @@
 <!--
 /**
- * Copyright (c) 2019, The Android Open Source Project
+ * Copyright (c) 2020, Xtended Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,6 @@
  */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Headline / Body font Noto Serif / Source Sans Pro overlay -->
-    <string name="font_google_sans_medium_overlay" translatable="false">GoogleSans Medium</string>
+    <!-- Headline / Body font Fucek overlay -->
+    <string name="font_fucek_source_overlay" translatable="false">Fucek</string>
 </resources>
