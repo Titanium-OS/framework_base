@@ -1008,13 +1008,13 @@ public class Build {
     public static final String FINGERPRINT = deriveFingerprint();
 
     /**
-     * Evolution X fingerprint
+     * TitaniumOS fingerprint
      * @hide
      */
     public static final String PROP_TITANIUM_FINGERPRINT = "org.titanium.fingerprint";
 
     /**
-     * Evolution X fingerprint
+     * TitaniumOS fingerprint
      * @hide
      */
     public static final String TITANIUM_FINGERPRINT = SystemProperties.get(PROP_TITANIUM_FINGERPRINT,

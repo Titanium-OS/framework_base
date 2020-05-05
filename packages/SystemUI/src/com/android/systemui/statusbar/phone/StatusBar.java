@@ -805,8 +805,8 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         createAndAddWindows(result);
 
-        mEvolutionSettingsObserver.observe();
-        mEvolutionSettingsObserver.update();
+        mTitaniumSettingsObserver.observe();
+        mTitaniumSettingsObserver.update();
 
         if (mWallpaperSupported) {
             // Make sure we always have the most current wallpaper info.
@@ -4215,9 +4215,9 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     };
 
-    private EvolutionSettingsObserver mEvolutionSettingsObserver = new EvolutionSettingsObserver(mHandler);
-    private class EvolutionSettingsObserver extends ContentObserver {
-        EvolutionSettingsObserver(Handler handler) {
+    private TitaniumSettingsObserver mTitaniumSettingsObserver = new TitaniumSettingsObserver(mHandler);
+    private class TitaniumSettingsObserver extends ContentObserver {
+        TitaniumSettingsObserver(Handler handler) {
             super(handler);
         }
 

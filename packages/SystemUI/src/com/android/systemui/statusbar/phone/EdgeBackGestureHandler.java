@@ -172,7 +172,7 @@ public class EdgeBackGestureHandler implements DisplayListener {
     private int mLeftInset;
     private int mRightInset;
 
-    // Evolution X additions start
+    // TitaniumOS additions start
     private int mEdgeHeight;
 
     public EdgeBackGestureHandler(Context context, OverviewProxyService overviewProxyService) {
