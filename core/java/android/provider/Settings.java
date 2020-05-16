@@ -5103,6 +5103,15 @@ public final class Settings {
                 new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
 
         /**
+         * Whether or not to hide the battery icon and % from QS header
+         * {@hide}
+         */
+        public static final String QS_HIDE_BATTERY = "qs_hide_battery";
+        /** {@hide} */
+        private static final Validator QS_HIDE_BATTERY_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
          * Whether to show seconds next to clock in status bar
          * 0 - hide (default)
          * 1 - show
@@ -6495,6 +6504,7 @@ public final class Settings {
             QS_PANEL_BG_USE_WALL,
             QS_PANEL_BG_USE_FW,
             QS_PANEL_BG_USE_ACCENT,
+            QS_HIDE_BATTERY,
             STATUS_BAR_CUSTOM_HEADER_HEIGHT,
             LOCKSCREEN_CLOCK,
             LOCKSCREEN_INFO,
@@ -6925,6 +6935,7 @@ public final class Settings {
             VALIDATORS.put(QS_PANEL_BG_USE_WALL, QS_PANEL_BG_USE_WALL_VALIDATOR);
             VALIDATORS.put(QS_PANEL_BG_USE_FW, QS_PANEL_BG_USE_FW_VALIDATOR);
             VALIDATORS.put(QS_PANEL_BG_USE_ACCENT, QS_PANEL_BG_USE_ACCENT_VALIDATOR);
+            VALIDATORS.put(QS_HIDE_BATTERY, QS_HIDE_BATTERY_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_CUSTOM_HEADER_HEIGHT, STATUS_BAR_CUSTOM_HEADER_HEIGHT_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_CLOCK, LOCKSCREEN_CLOCK_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_INFO, LOCKSCREEN_INFO_VALIDATOR);

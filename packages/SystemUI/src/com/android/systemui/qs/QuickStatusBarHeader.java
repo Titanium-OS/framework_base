@@ -107,6 +107,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private boolean mExpanded;
     private boolean mListening;
     private boolean mQsDisabled;
+    private boolean isHideBattIcon;
 
     private QSCarrierGroup mCarrierGroup;
     protected QuickQSPanel mHeaderQsPanel;
@@ -148,6 +149,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
             ContentResolver resolver = getContext().getContentResolver();
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.QS_BATTERY_MODE), false,
+                    this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System
+                    .getUriFor(Settings.System.QS_HIDE_BATTERY), false,
                     this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.STATUS_BAR_BATTERY_STYLE), false,
@@ -396,6 +400,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         }
         mBatteryRemainingIcon.updatePercentView();
         mBatteryRemainingIcon.updateVisibility();
+        mBatteryRemainingIcon.setVisibility(isHideBattIcon ? View.GONE : View.VISIBLE);
     }
 
     private void updateSBBatteryStyle() {
@@ -404,6 +409,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         mBatteryRemainingIcon.updateBatteryStyle();
         mBatteryRemainingIcon.updatePercentView();
         mBatteryRemainingIcon.updateVisibility();
+        mBatteryRemainingIcon.setVisibility(isHideBattIcon ? View.GONE : View.VISIBLE);
     }
 
     private void updateStatusIconAlphaAnimator() {
@@ -624,6 +630,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private void updateSettings() {
         mHeaderImageEnabled = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0,
+                UserHandle.USER_CURRENT) == 1;
+        isHideBattIcon = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.QS_HIDE_BATTERY, 0,
                 UserHandle.USER_CURRENT) == 1;
         updateHeaderImage();
         updateQSBatteryMode();
