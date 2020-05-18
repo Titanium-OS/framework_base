@@ -39,4 +39,8 @@
 
     <!-- FPSInfoService FPS node file path -->
     <string name="config_fpsInfoSysNode" translatable="false"></string>
+
+    <!-- Show VoWIFI -->
+    <bool name="config_display_vowifi">true</bool>
+
 </resources>
