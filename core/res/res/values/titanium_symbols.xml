@@ -221,4 +221,8 @@
   <!-- True if the notification's dynamic app icon and text tint should be optimised for dark
        backgrounds -->
   <java-symbol type="bool" name="config_useDarkBgNotificationIconTextTinting" />
+
+  <!-- SystemUI Restart -->
+  <java-symbol type="string" name="systemui_restart_title" />
+  <java-symbol type="string" name="systemui_restart_message" />
 </resources>
