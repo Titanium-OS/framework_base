@@ -42,11 +42,13 @@ LOCAL_REQUIRED_MODULES := \
 	AccentColorRedOverlay \
 	AccentColorTealOverlay \
 	AccentColorCocaColaOverlay \
+	AccentColorCoralOverlay \
 	AccentColorDiscordOverlay \
 	AccentColorTitaniumBlueOverlay \
 	AccentColorTitaniumGreenOverlay \
 	AccentColorTitaniumRedOverlay \
 	AccentColorTitaniumYellowOverlay \
+	AccentColorFerrariRedOverlay \
 	AccentColorGoldenShowerOverlay \
 	AccentColorJollibeeOverlay \
 	AccentColorMatrixOverlay \
