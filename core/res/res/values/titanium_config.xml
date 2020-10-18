@@ -44,4 +44,13 @@
          OnePlus 7 Pro. This HAL expects a different format for the data instead of the usual (ms)
          timing(the duration which the vibrator is expected to vibrate for). -->
     <bool name="config_hasOnePlusHapticMotor">false</bool>
+
+    <!-- Power Menu -->
+    <string-array translatable="false" name="custom_config_globalActionsList">
+        <item>emergency</item>
+        <item>lockdown</item>
+        <item>power</item>
+        <item>restart</item>
+        <item>screenshot</item> <!--2 buttons nav-->
+    </string-array>
 </resources>
