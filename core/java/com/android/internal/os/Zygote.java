@@ -792,9 +792,8 @@ public final class Zygote {
     private static native void nativeBoostUsapPriority();
 
     private static void maybeSetGmsModel(String packageName, String loggingTag) {
-        if (PRODUCT_NEEDS_MODEL_EDIT &&
-                packageName != null &&
-                packageName.startsWith("com.google.android.gms")) {
+        if (packageName != null &&
+            packageName.startsWith("com.google.android.gms")) {
             /*
              * This would be much prettier if we just removed "final" from the MODEL field in Build,
              * but that's easy to detect should Google ever catch onto this. Inspecting bytecode
