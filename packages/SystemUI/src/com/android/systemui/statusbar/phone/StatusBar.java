@@ -766,7 +766,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             PluginManager pluginManager,
             Optional<Divider> dividerOptional,
             LightsOutNotifController lightsOutNotifController,
-            FlashlightController flashlightController,
             StatusBarNotificationActivityStarter.Builder
                     statusBarNotificationActivityStarterBuilder,
             ShadeController shadeController,
@@ -784,7 +783,8 @@ public class StatusBar extends SystemUI implements DemoMode,
             KeyguardIndicationController keyguardIndicationController,
             DismissCallbackRegistry dismissCallbackRegistry,
             Lazy<NotificationShadeDepthController> notificationShadeDepthControllerLazy,
-            StatusBarTouchableRegionManager statusBarTouchableRegionManager) {
+            StatusBarTouchableRegionManager statusBarTouchableRegionManager,
+            FlashlightController flashlightController) {
         super(context);
         mNotificationsController = notificationsController;
         mLightBarController = lightBarController;
@@ -828,7 +828,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         mDeviceProvisionedController = deviceProvisionedController;
         mNavigationBarController = navigationBarController;
         mAssistManagerLazy = assistManagerLazy;
-        mFlashlightController = flashlightController;
         mConfigurationController = configurationController;
         mNotificationShadeWindowController = notificationShadeWindowController;
         mLockscreenLockIconController = lockscreenLockIconController;
@@ -862,6 +861,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         mUserInfoControllerImpl = userInfoControllerImpl;
         mIconPolicy = phoneStatusBarPolicy;
         mDismissCallbackRegistry = dismissCallbackRegistry;
+        mFlashlightController = flashlightController;
 
         mBubbleExpandListener =
                 (isExpanding, key) -> {
