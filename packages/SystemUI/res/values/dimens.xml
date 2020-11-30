@@ -400,7 +400,7 @@
     <dimen name="qs_footer_icon_padding">14dp</dimen>
 
     <!-- The padding between the notifications and the quick settings container -->
-    <dimen name="qs_notification_padding">@dimen/notification_side_paddings</dimen>
+    <dimen name="qs_notification_padding">8dp</dimen>
 
     <!-- Height of the status bar header bar when expanded -->
     <dimen name="status_bar_header_height_expanded">124dp</dimen>
@@ -1403,7 +1403,7 @@
     <!--  Allow CornerHandleView and PathSpecCornerPathRenderer to decouple from corner-radius -->
     <dimen name="config_rounded_mask_size">@*android:dimen/rounded_corner_radius</dimen>
     <dimen name="config_rounded_mask_size_top">@*android:dimen/rounded_corner_radius_top</dimen>
-    <dimen name="config_rounded_mask_size_bottom">@*android:dimen/rounded_corner_radius_bottom</dimen>
+    <dimen name="config_rounded_mask_size_bottom">@*android:dimen/rounded_corner_radius_top</dimen>
 
     <!-- Output switcher panel related dimensions -->
     <dimen name="media_output_dialog_list_margin">12dp</dimen>
@@ -1413,4 +1413,16 @@
     <dimen name="media_output_dialog_header_icon_padding">16dp</dimen>
     <dimen name="media_output_dialog_icon_corner_radius">16dp</dimen>
     <dimen name="media_output_dialog_title_anim_y_delta">12.5dp</dimen>
+
+    <!-- Volume Panel -->
+    <dimen name="custom_volume_dialog_seekbar_width">@dimen/volume_dialog_panel_width</dimen>
+    <dimen name="custom_volume_dialog_seekbar_height">200dp</dimen>
+    <dimen name="volume_dialog_row_icon_margintop">-70dp</dimen>
+    <dimen name="volume_dialog_row_precentage_margintop">-32dp</dimen>
+    <dimen name="volume_dialog_rows_padding_right">0.5dp</dimen>
+    <dimen name="volume_dialog_additional_margin">2.5dip</dimen>
+    <dimen name="volume_dialog_ringer_spacing">4dp</dimen>
+    <dimen name="volume_dialog_ringer_height">45dp</dimen>
+
+    <dimen name="qsside_paddings">0dp</dimen>
 </resources>
