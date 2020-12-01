@@ -5664,6 +5664,12 @@ public final class Settings {
          */
         public static final String SYSTEMUI_PLUGIN_VOLUME = "systemui_plugin_volume";
 
+	/**
+         * Some creation simillar to samsung OneUI
+         * @hide
+         */
+        public static final String SETTINGS_SPACER = "settings_spacer";
+
         /**
          * Whether to disco the QS tiles or not
          * @hide
