@@ -252,6 +252,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
     private final SysuiColorExtractor mSysuiColorExtractor;
     private final IStatusBarService mStatusBarService;
     private final NotificationShadeWindowController mNotificationShadeWindowController;
+    private final BlurUtils mBlurUtils;
     private GlobalActionsPanelPlugin mWalletPlugin;
     private Optional<ControlsUiController> mControlsUiControllerOptional;
     private final IWindowManager mIWindowManager;
@@ -262,7 +263,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
     private int mDialogPressDelay = DIALOG_PRESS_DELAY; // ms
     private Handler mMainHandler;
     private CurrentUserContextTracker mCurrentUserContextTracker;
-    private final BlurUtils mBlurUtils;
+
     @VisibleForTesting
     boolean mShowLockScreenCardsAndControls = false;
 
@@ -315,7 +316,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             KeyguardStateController keyguardStateController, UserManager userManager,
             TrustManager trustManager, IActivityManager iActivityManager,
             @Nullable TelecomManager telecomManager, MetricsLogger metricsLogger,
-            NotificationShadeDepthController depthController, SysuiColorExtractor colorExtractor,
+            NotificationShadeDepthController depthController, BlurUtils blurUtils, SysuiColorExtractor colorExtractor,
             IStatusBarService statusBarService,
             NotificationShadeWindowController notificationShadeWindowController,
             IWindowManager iWindowManager,
@@ -345,6 +346,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
         mSysuiColorExtractor = colorExtractor;
         mStatusBarService = statusBarService;
         mNotificationShadeWindowController = notificationShadeWindowController;
+        mBlurUtils = blurUtils;
         mControlsUiControllerOptional = controlsComponent.getControlsUiController();
         mIWindowManager = iWindowManager;
         mBackgroundExecutor = backgroundExecutor;
@@ -832,7 +834,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             uiController = mControlsUiControllerOptional.get();
         }
         ActionsDialog dialog = new ActionsDialog(mContext, mAdapter, mOverflowAdapter,
-                this::getWalletViewController, mDepthController, mSysuiColorExtractor,
+                walletViewController, mDepthController, mBlurUtils, mSysuiColorExtractor,
                 mStatusBarService, mNotificationShadeWindowController,
                 controlsAvailable(), uiController,
                 mSysUiState, this::onRotate, mKeyguardShowing, mPowerAdapter,
@@ -2409,8 +2411,8 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
         private TextView mLockMessage;
 
         ActionsDialog(Context context, MyAdapter adapter, MyOverflowAdapter overflowAdapter,
-                Provider<GlobalActionsPanelPlugin.PanelViewController> walletFactory,
-                NotificationShadeDepthController depthController,
+                GlobalActionsPanelPlugin.PanelViewController walletViewController,
+                NotificationShadeDepthController depthController, BlurUtils blurUtils,
                 SysuiColorExtractor sysuiColorExtractor, IStatusBarService statusBarService,
                 NotificationShadeWindowController notificationShadeWindowController,
                 boolean controlsAvailable, @Nullable ControlsUiController controlsUiController,
@@ -2422,6 +2424,7 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             mOverflowAdapter = overflowAdapter;
             mPowerOptionsAdapter = powerAdapter;
             mDepthController = depthController;
+            mBlurUtils = blurUtils;
             mColorExtractor = sysuiColorExtractor;
             mStatusBarService = statusBarService;
             mNotificationShadeWindowController = notificationShadeWindowController;
@@ -2610,8 +2613,11 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             initializeWalletView();
             if (mBackgroundDrawable == null) {
                 mBackgroundDrawable = new ScrimDrawable();
-                mScrimAlpha = mBlurUtils.supportsBlursOnWindows() ?
-                        ScrimController.BLUR_SCRIM_ALPHA : ScrimController.BUSY_SCRIM_ALPHA;
+                if (mBlurUtils.supportsBlursOnWindows()) {
+                    mScrimAlpha = 0.54f;
+                } else {
+                    mScrimAlpha = 0.8f;
+                }
             }
             getWindow().setBackgroundDrawable(mBackgroundDrawable);
         }
