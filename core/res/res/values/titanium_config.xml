@@ -120,4 +120,7 @@
     <bool name="config_deviceHasVariableButtonBrightness">false</bool>
 
     <bool name="config_has_Soli">false</bool>
+
+    <!-- -1 means use same as config_screenBrightnessDoze -->
+    <integer name="config_screenBrightnessPulse">-1</integer>
 </resources>
