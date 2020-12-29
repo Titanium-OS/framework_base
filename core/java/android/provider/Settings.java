@@ -5640,6 +5640,11 @@ public final class Settings {
         public static final String CUSTOM_TEXT_CLOCK_FONT_SIZE = "custom_text_clock_font_size";
 
         /**
+         * @hide
+         */
+        public static final String QS_TILE_STYLE = "qs_tile_style";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
@@ -5823,6 +5828,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(LOCK_SCREEN_WEATHER_ICON_COLOR);
             PRIVATE_SETTINGS.add(LOCK_OWNERINFO_FONTS);
             PRIVATE_SETTINGS.add(LOCKOWNER_FONT_SIZE);
+            PRIVATE_SETTINGS.add(QS_TILE_STYLE);
         }
 
         /**
