@@ -191,4 +191,11 @@
     <!-- Screenrecorder -->
     <string name="screenrecord_stopdot_label">Show stop dot\nLongpress to move it</string>
     <string name="screenrecord_lowquality_label">Lower quality for smaller file size</string>
+
+    <!-- Headphones Buddy -->
+    <string name="hp_buddy">Headphones Buddy</string>
+    <string name="hp_buddy_left">Left only</string>
+    <string name="hp_buddy_right">Right only</string>
+    <string name="hp_buddy_center">Both</string>
+    <string name="hp_buddy_not_connected">Connect your headphones</string>
 </resources>
