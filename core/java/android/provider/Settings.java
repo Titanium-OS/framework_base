@@ -5704,6 +5704,12 @@ public final class Settings {
         public static final String SYSTEMUI_PLUGIN_VOLUME = "systemui_plugin_volume";
 
         /**
+         * Whether to disco the QS tiles or not
+         * @hide
+         */
+        public static final String QS_TILES_BG_DISCO = "qs_tiles_bg_disco";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *
@@ -5891,6 +5897,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(QS_PANEL_BG_USE_NEW_TINT);
             PRIVATE_SETTINGS.add(ACCENT_COLOR);
             PRIVATE_SETTINGS.add(SYSTEMUI_PLUGIN_VOLUME);
+            PRIVATE_SETTINGS.add(QS_TILES_BG_DISCO);
         }
 
         /**
