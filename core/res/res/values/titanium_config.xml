@@ -145,7 +145,6 @@
     <!-- Pocket Lock -->
     <bool name="config_pocketModeSupported">true</bool>
 
-<<<<<<< HEAD:core/res/res/values/titanium_config.xml
     <!-- AOKP custom system animations -->
     <string name="animation_fade">Fade</string>
     <string name="animation_slide_right">Slide in right</string>
@@ -170,7 +169,7 @@
     <!-- True if the notification's dynamic app icon and text tint should be optimised for dark
          backgrounds -->
     <bool name="config_useDarkBgNotificationIconTextTinting">false</bool>
-=======
+
     <!-- Default values for LiveDisplay -->
     <integer name="config_dayColorTemperature">6500</integer>
     <integer name="config_nightColorTemperature">4800</integer>
@@ -201,5 +200,4 @@
 
     <!-- Should we filter any display modes which are unampped? -->
     <bool name="config_filterDisplayModes">false</bool>
->>>>>>> 0749095a2e1... Introduce LiveDisplay from Lineage:core/res/res/values/evolution_config.xml
 </resources>
