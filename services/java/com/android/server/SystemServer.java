@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2006 The Android Open Source Project
- * Copyright (C) 2016-2017 halogenOS
+ * Copyright (C) 2016-2017 TitaniumOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -495,9 +495,9 @@ public final class SystemServer {
                         uptimeMillis);
             }
 
-            Slog.i("halogenOS",
-                "Welcome to halogenOS! We believe that you'll love it. " +
-                "Ready to... uh... Q!");
+            Slog.i("TitwniumOS",
+                "Welcome to TitaniumOS! We believe that you'll love it. " +
+                "Ready to... uh... R!");
 
             // In case the runtime switched since last boot (such as when
             // the old runtime was removed in an OTA), set the system
