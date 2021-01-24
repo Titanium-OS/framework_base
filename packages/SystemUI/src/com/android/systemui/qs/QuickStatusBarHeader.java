@@ -36,8 +36,8 @@ import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
+import android.os.UserHandle;
+import android.os.Looper;
 import android.provider.AlarmClock;
 import android.provider.CalendarContract;
 import android.provider.Settings;
@@ -132,7 +132,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private final ZenModeController mZenController;
     private final StatusBarIconController mStatusBarIconController;
     private final ActivityStarter mActivityStarter;
-    private final Vibrator mVibrator;
 
     private QSPanel mQsPanel;
 
@@ -271,7 +270,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         mRingerModeTracker = ringerModeTracker;
         mSettingsObserver.observe();
         mUiEventLogger = uiEventLogger;
-        mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        mBroadcastDispatcher = broadcastDispatcher;
     }
 
     @Override
@@ -331,13 +330,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 
         mClockView = findViewById(R.id.clock);
         mClockView.setOnClickListener(this);
-        mClockView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    startDateTimeSettingsActivity();
-                    return false;
-                }
-            });
+        mClockView.setQsHeader();
         mDateView = findViewById(R.id.date);
         mSpace = findViewById(R.id.space);
         mDateView.setOnClickListener(this);
@@ -806,14 +799,6 @@ public class QuickStatusBarHeader extends RelativeLayout implements
             mActivityStarter.postStartActivityDismissingKeyguard(new Intent(
                     Intent.ACTION_POWER_USAGE_SUMMARY), 0);
         }
-    }
-
-    private void startDateTimeSettingsActivity() {
-        Intent nIntent = new Intent(Intent.ACTION_MAIN);
-        nIntent.setClassName("com.android.settings",
-            "com.android.settings.Settings$DateTimeSettingsActivity");
-        mActivityStarter.startActivity(nIntent, true /* dismissShade */);
-        mVibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE));
     }
 
     @Override
