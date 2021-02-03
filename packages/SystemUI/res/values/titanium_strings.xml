@@ -209,4 +209,7 @@
 
     <!-- QS Header data usage info -->
     <string name="usage_data">used</string>
+
+    <!-- Scrolling Screenshot string -->
+    <string name="scrollss">Scroll</string>
 </resources>
